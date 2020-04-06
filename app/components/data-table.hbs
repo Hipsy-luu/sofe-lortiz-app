@@ -1,0 +1,76 @@
+{{yield}}
+<div class="card secundary-background-color" style="margin: 10px 0px;">
+    <div class="card-body" style="padding: 0px 26px;">
+        <div class="row">
+            <div class="col-8 " style="align-self: center;text-align: left;padding: 0px 20px;">
+                <h5 class="card-title" style="font-size: 1.1rem;">Affected Countries</h5>
+            </div>
+            <div class="col-4" style="align-self: center;text-align: right;padding: 0px 20px;">
+                <h5 class="card-title secundary-text-color" style="font-size: 0.8rem;">Today's Statistics</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8 " style="align-self: center;padding: 0px;">
+                <input value={{this.searchValue}} {{on "keyup" this.filterByName}} class="search-input"
+                    placeholder="Search {{this.api.allCountriesData.length}} Affected Countries" />
+            </div>
+            <div class="col-4" style="">
+                <select class="form-control search-input order-by-select" id="entityType"
+                    onchange={{action 'shortByOpc' value="target.value"}} style="background-color: #3b4452 !important;
+                                                                                                    color: #adb5bd;
+                                                                                                    border: 1px solid #434e5e;
+                                                                                                    border-radius: .2rem;
+                                                                                                    box-shadow: none;">
+                    <option value="normal" disabled selected>Order By</option>
+                    <option value="cases">Total Cases</option>
+                    <option value="todayCases">Today Cases</option>
+                    <option value="deaths">Total Deaths</option>
+                    <option value="todayDeaths">Today Deaths</option>
+                    <option value="recovered">Total Recoveries</option>
+                    <option value="active">Active(Live Infected)</option>
+                    <option value="critical">Crítical</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <table style="width: -webkit-fill-available;">
+                <div id="myTable" class="table-contries-content">
+                    {{#each this.api.filteredCountriesData as |countrie|}}
+                    <div class="row" style="margin: 0px;border-top-color: rgb(67, 78, 94);border-top-style: solid;">
+                        <div class="col-2 " style="align-self: center;text-align: left;padding: 0px 20px;">
+                            Imagen
+                        </div>
+                        <div class="col-6" style="align-self: center;text-align: right;padding: 0px 20px;">
+                            <div class="row">
+                                <span style="padding: 0px 6px 0px 0px;">{{countrie.country}} </span>
+                                <span style="color: #10c469!important;padding: 0px 6px 0px 0px;">+{{countrie.recovered}} Recovered</span>
+                            </div>
+                            <div class="row" style="font-size: 0.7rem;">
+                                <span style="color: #21afdd!important;padding: 0px 6px 0px 0px;">{{countrie.cases}} Cases</span> 
+                                <span> &amp;</span>
+                                <span style="color: #ff5b5b!important;padding: 0px 6px;">{{countrie.deaths}} Deaths</span>
+                            </div>
+                        </div>
+                        <div class="col-2 " style="align-self: center;text-align: left;padding: 0px 20px;font-size: 0.7rem;">
+                            <div class="row">
+                               <span style="color: #21afdd!important;padding: 0px 6px 0px 0px;">+{{countrie.todayCases}} Cases</span> 
+                            </div>
+                            <div class="row" >
+                                <span style="color: #ff5b5b!important;padding: 0px 6px;">+{{countrie.todayDeaths}} Deaths</span>
+                            </div>
+                        </div>
+                        <div class="col-2 " style="align-self: center;text-align: left;padding: 0px 20px;;font-size: 0.7rem;">
+                            <div class="row">
+                               <span style="color: #dd7921!important;padding: 0px 6px 0px 0px;">{{countrie.active}} Active</span> 
+                            </div>
+                            <div class="row" >
+                                <span style="color: #f9c851!important;padding: 0px 6px;">{{countrie.critical}} Critical</span>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </table>
+        </div>
+    </div>
+</div>

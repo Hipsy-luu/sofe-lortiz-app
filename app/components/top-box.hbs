@@ -1,0 +1,60 @@
+{{yield}}
+
+{{!-- <h2>{{@title}}</h2> --}}
+
+<div class="row">
+  {{!-- {{#if this.api.dataReady}}
+      Welcome backssssssssssssssssssssssssss
+  {{/if}} www  --}}
+  {{#each this.api.topListData as |item|}}
+  <div class="col-md col-xl-3 col-md-6 col-6">
+    <div class="card secundary-background-color" style="margin: 10px 0px;">
+      <div class="card-body">
+        <h5 class="card-title text-md-center-left" style="font-size: 1rem;">{{item.title}}</h5>
+        <div class="row">
+          {{!-- 
+          <div class="col-md col-xl-2 col-md-4 col-4">
+            <button class="btn btn-primary" {{on 'click' (fn this.showPerson item.title)}}>{{item.title}}</button>
+          </div> 
+          --}}
+          {{#if this.api.dataReady}}
+            <div class="col-md-4 text-md-center-rigth" style="align-self: center;">
+              <span class="badge badge-pill"  style="background-color: {{item.color}};">
+                <label style="font-size:0.7rem;margin-bottom: 1px;">{{item.percent}}</label>
+                <i class="material-icons" style="font-size:10px;color:#fefefe;margin-top: 0px;">trending_up</i>
+              </span>
+            </div>
+            <div class="col-md-8 text-md-center-rigth" style="">
+              <div class="row" style="display: contents;">
+                <div class="col no-padding">
+                  <h2 class="secundary-font font-weight-normal">{{formatingNumber item.total}}</h2>
+                </div>
+              </div>
+              <div class="row"  style="display: contents;">
+                <div class="col no-padding">
+                  <label class="secundary-text-color">{{item.aditionalData}}</label>
+                </div>
+              </div>
+            </div>
+          {{else}}
+          <div class="col" style="margin: 20px 40%;">
+            <div class="sk-chase">
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+            </div>
+          </div>
+            
+          {{/if}}
+        </div>
+        <div class="row line-row" style="background-color: {{item.color}};"></div>
+      </div>
+    </div>
+    {{!-- <button {{on 'click' this.showPerson}}>{{person}}</button> --}}
+    
+  </div>
+  {{/each}}
+</div>

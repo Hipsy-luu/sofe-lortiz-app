@@ -1,0 +1,109 @@
+{{!--{{outlet}}--}}
+
+{{!-- <h2>List of Scientists</h2>
+
+<ul>
+  {{#each @model as |scientist|}}
+    <li>{{scientist}}</li>
+  {{/each}}
+</ul> --}}
+
+
+<!-- App Top Bar -->
+<div class="navbar-custom">
+    <div class="container-fluid">
+        <div class="logo-box mx-auto">
+            <div class="logo text-center">
+                <span class="logo-sm">
+                    <img src="assets/images/logo-light.png" style="height: 40px;">
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Es el encargado de que se mueva el contenido -->
+<div class="wrapper" style="margin-top: 40px;">
+    <!-- Contenedor que crea un padding y da como limite de ancho del contenido de la pagina -->
+    <div class="container-fluid">
+
+        <TopBox />
+
+        <div class="row">
+            {{!-- Tabla de paises con filtros  --}}
+            <div class="col-xl-4 text-md-center-rigth" style="align-self: center;">
+                <DataTable />
+            </div>
+            {{!-- Mapamundi con los puntos --}}
+            <div class="col-xl-8 text-md-center-rigth" style="">
+                <Map />
+            </div>
+        </div>
+
+        <div class="row">
+            {{!-- Tabla de paises con filtros  --}}
+            <div class="col-xl-4 text-md-center-rigth" style="align-self: center;">
+                <RateDistribution />
+            </div>
+            {{!-- Mapamundi con los puntos --}}
+            <div class="col-xl-8 text-md-center-rigth" style="">
+                <InfectionsHistory />
+            </div>
+        </div>
+
+        <div class="row">
+            {{!-- Tabla de paises con filtros  --}}
+            <div class="col-xl-4 " style="align-self: center;">
+                <InfectionDistribution />
+            </div>
+            {{!-- Mapamundi con los puntos --}}
+            <div class="col-xl-5 " style="">
+                <InfectionRates />
+            </div>
+            <div class="col-xl-3 " style="">
+
+                <div class="card secundary-background-color" style="margin: 10px 0px;">
+                    <div class="card-body" style="padding: 0px 26px;height: 463px;">
+                        <div class="row">
+                            <div class="col " style="align-self: center;text-align: left;padding: 0px 20px;">
+                                <h5 class="card-title" style="font-size: 1.1rem;">Infection Rates</h5>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 100%;">
+                            <div class="col rectangle" style="">
+                                <label class="black-boxes" style="height: 100%;padding: 25% 11%;">
+                                    <br>
+                                    <span style="font-size: large;">Recovery Rate</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer" style="background-color: #21252e;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6"> 2020 © Crafted <span class="text-danger"><i class="fas fa-heart"></i></span> by
+                <a href="https://github.com/Hipsy-luu">Luismiguel Ortiz Alvarez</a></div>
+            <div class="col-md-6">
+                <div class="text-md-right footer-links d-none d-sm-block">
+                    <a href="https://github.com/OssamaRafique/Corona-Statistics-And-Tracker-Dashboard-Angular-9">
+                        <span class="text-blue">
+                            <i class="fab fa-osi"></i>
+                        </span> Proudly Open Source
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.enbibo.clientes">
+                        <span class="text-warning">
+                            <i class="fas fa-mug-hot"></i>
+                        </span> Another Apps By Me
+                    </a>
+                    <a href="https://www.facebook.com/Luismi.luu"><span class="text-success"><i
+                                class="far fa-paper-plane"></i></span> Contact
+                        Me</a></div>
+            </div>
+        </div>
+    </div>
+</footer>
