@@ -43,6 +43,7 @@ export default class IndividualapiService extends Service {
     @tracked rateDeaths = 0;
     @tracked rateRecoveries = 0;
     @tracked rateCritical = 0;
+    @tracked inverseRateCritical = 0;
 
     async initService(name) {
         this.allData = await this.getIndividualGeneralDataApi(name);
@@ -69,6 +70,7 @@ export default class IndividualapiService extends Service {
         this.rateDeaths = ((this.allData.recovered/(this.allData.cases/100))).toFixed(2);
         this.rateRecoveries = (100-(this.allData.recovered/(this.allData.cases/100))).toFixed(2);
         this.rateCritical = ((totalCritical/(totalActive/100))).toFixed(2);
+        this.inverseRateCritical = 100 - this.rateCritical;
 
         this.topListData = [{
             title: "Infections",

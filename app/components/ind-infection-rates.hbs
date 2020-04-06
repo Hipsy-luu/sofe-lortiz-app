@@ -1,0 +1,30 @@
+<div class="card secundary-background-color" style="margin: 10px 0px;">
+    <div class="card-body" style="padding: 0px 26px;height: 463px;">
+        <div class="row">
+            <div class="col " style="align-self: center;text-align: left;padding: 0px 20px;">
+                <h5 class="card-title" style="font-size: 1.1rem;">Infection Rates</h5>
+            </div>
+        </div>
+        <div class="row" style="height: 45%;">
+            <div class="col-6 rectangle" style="">
+                <label class="black-boxes"><span class="color-verde">{{this.individualapi.rateRecoveries}}%</span><br>
+                <span style="font-size: large;">Recovery Rate</span></label>
+            </div>
+            <div class="col-6 rectangle">
+                <label class="black-boxes"><span class="color-rojo">{{this.individualapi.rateDeaths}}%</span><br>
+                <span style="font-size: large;">Death Rate</span></label>
+            </div>
+        </div>
+
+        <div class="row" style="height: 45%;">
+            <div class="col-6 rectangle">
+                <label class="black-boxes"><span class="color-amarillo">{{this.individualapi.rateCritical}}%</span><br>
+                <span style="font-size: large;">Critical Rate</span></label>
+            </div>
+            <div class="col-6 rectangle">
+                <label class="black-boxes"><span class="color-azul">{{this.individualapi.inverseRateCritical}}%</span><br>
+                <span style="font-size: large;">Mild Cases</span></label>
+            </div>
+        </div>
+    </div>
+</div>
