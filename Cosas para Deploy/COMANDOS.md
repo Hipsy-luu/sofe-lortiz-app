@@ -15,3 +15,5 @@ Crea un componente reutilizable
     >>ember generate component -gc /{en que carpeta de los componentes se guardara}/{nombre del componente}
 
     >>ember g helper {nombre del ayudador}
+    
+    >>ember generate service {nombre del servicio}

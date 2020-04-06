@@ -1,4 +1,5 @@
 {{yield}}
+
 <div class="card secundary-background-color" style="margin: 10px 0px;">
     <div class="card-body" style="padding: 0px 26px;">
         <div class="row">
@@ -36,7 +37,8 @@
             <table style="width: -webkit-fill-available;">
                 <div id="myTable" class="table-contries-content">
                     {{#each this.api.filteredCountriesData as |countrie|}}
-                    <div class="row" style="margin: 0px;border-top-color: rgb(67, 78, 94);border-top-style: solid;">
+                    <a href="/global/{{countrie.country}}" >
+                    <div href="/global/{{countrie.country}}" class="row" style="margin: 0px;border-top-color: rgb(67, 78, 94);border-top-style: solid;">
                         <div class="col-2 " style="align-self: center;text-align: left;padding: 0px 20px;">
                             Imagen
                         </div>
@@ -68,6 +70,8 @@
                             </div>
                         </div>
                     </div>
+                    </a>
+                    
                     {{/each}}
                 </div>
             </table>

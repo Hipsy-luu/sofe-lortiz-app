@@ -15,7 +15,7 @@
         <div class="logo-box mx-auto">
             <div class="logo text-center">
                 <span class="logo-sm">
-                    <img src="assets/images/logo-light.png" style="height: 40px;">
+                    <img src="../assets/images/logo-light.png" style="height: 40px;">
                 </span>
             </div>
         </div>
@@ -26,39 +26,31 @@
 <div class="wrapper" style="margin-top: 40px;">
     <!-- Contenedor que crea un padding y da como limite de ancho del contenido de la pagina -->
     <div class="container-fluid">
-
-        <TopBox />
+        {{!-- <TopBox /> --}}
+        <IndTopBox @title="{{@model.name}}"/>
 
         <div class="row">
-            {{!-- Tabla de paises con filtros  --}}
+            {{!-- Tabla de con los porcentages  --}}
             <div class="col-xl-4 text-md-center-rigth" style="align-self: center;">
-                <DataTable />
+                {{!-- <RateDistribution /> --}}
+                <IndRateDistribution />
             </div>
-            {{!-- Mapamundi con los puntos --}}
+            {{!-- Timeline Infection --}}
             <div class="col-xl-8 text-md-center-rigth" style="">
-                <Map />
+                {{!-- <InfectionsHistory /> --}}
+                <IndInfectionsHistory />
             </div>
         </div>
 
         <div class="row">
-            {{!-- Tabla de paises con filtros  --}}
-            <div class="col-xl-4 text-md-center-rigth" style="align-self: center;">
-                <RateDistribution />
-            </div>
-            {{!-- Mapamundi con los puntos --}}
-            <div class="col-xl-8 text-md-center-rigth" style="">
-                <InfectionsHistory />
-            </div>
-        </div>
-
-        <div class="row">
-            {{!-- Tabla de paises con filtros  --}}
+            {{!-- Tabla de pie con la distribucion de los estados de la enfermedad  --}}
             <div class="col-xl-4 " style="align-self: center;">
-                <InfectionDistribution />
+                {{!-- <InfectionDistribution /> --}}
+                <IndInfectionDistribution  @title="{{@model.name}}"/>
             </div>
-            {{!-- Mapamundi con los puntos --}}
+            {{!-- Tabla con los promedios de los estados de la infeccion --}}
             <div class="col-xl-5 " style="">
-                <InfectionRates />
+                {{!-- <InfectionRates /> --}}
             </div>
             <div class="col-xl-3 " style="">
 
